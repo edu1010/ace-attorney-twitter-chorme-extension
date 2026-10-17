@@ -6,3 +6,10 @@ queue/
 delete/
 
 venv/*
+
+# Extension build and local upstream inspection
+node_modules/
+dist/
+.cache/
+test-results/
+playwright-report/
