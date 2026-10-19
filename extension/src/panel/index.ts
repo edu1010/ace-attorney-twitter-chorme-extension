@@ -102,7 +102,7 @@ window.addEventListener('pagehide', () => { controller?.abort(); if (videoUrl) U
 
 async function init() {
   await document.fonts.load(FONT);
-  const response = await fetch('assets/manifest.json');
+  const response = await fetch('assets/catalog.json');
   if (!response.ok) throw new Error('Local assets are missing. Run npm run assets and rebuild.');
   assets = await response.json();
   const id = location.hash.slice(1);

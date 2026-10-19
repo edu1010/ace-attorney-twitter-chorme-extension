@@ -8,7 +8,7 @@ The original bot source remains intact. Its previous instructions are in [README
 
 ## Load the prepared build
 
-If `dist/manifest.json` and `dist/assets/manifest.json` exist, the extension is ready to load:
+If `dist/manifest.json` and `dist/assets/catalog.json` exist, the extension is ready to load:
 
 1. Open `chrome://extensions` in desktop Chrome.
 2. Turn on **Developer mode**.
@@ -33,6 +33,8 @@ Asset preparation downloads the original approximately 85 MB archive once, verif
 If your network uses a private TLS certificate, configure Node's trusted CA with `NODE_EXTRA_CA_CERTS` or download `https://dl.luismayo.com/assetsv4.zip` using your trusted system browser into `.cache/assetsv4.zip`, then run `npm run assets` again. The checksum is still verified. Do not disable certificate validation.
 
 Before sharing a packaged build, read [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). Source-code licenses do not establish redistribution rights for Capcom game assets. The original font has separate noncommercial attribution/share-alike terms. Downloaded assets, caches and build outputs are deliberately excluded from Git.
+
+Run `npm run package` to build `dist/AceAttorTWExtension.zip` for upload to the Chrome Web Store. The ZIP contains the contents of `dist` with the extension's only `manifest.json` at the root. The asset catalog is named `assets/catalog.json` to avoid a duplicate-manifest upload error. Existing ZIPs and source maps are excluded from the package.
 
 ## Use it
 

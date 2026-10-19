@@ -5,7 +5,7 @@ import { recordingType } from '../../extension/src/renderer/record';
 import { composerUrl } from '../../extension/src/services/publishing';
 import { SETTINGS } from '../../extension/src/settings';
 import type { AssetManifest, Tweet } from '../../extension/src/types';
-const assets: AssetManifest = JSON.parse(readFileSync('extension/assets/manifest.json', 'utf8'));
+const assets: AssetManifest = JSON.parse(readFileSync('extension/assets/catalog.json', 'utf8'));
 const tweet = (id: string, username: string, text: string): Tweet => ({ id, username, text, displayName: username, order: 0, url: `https://x.com/${username}/status/${id}`, unavailable: !text });
 const measure = (text: string) => graphemes(text).length * 8;
 describe('courtroom script', () => {

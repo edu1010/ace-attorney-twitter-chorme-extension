@@ -1,5 +1,5 @@
 // Build-time only. No remote code or assets are fetched by the installed extension.
-import { readFile, writeFile, mkdir } from 'node:fs/promises';
+import { readFile, writeFile, mkdir, rm } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import path from 'node:path';
 import { unzipSync } from 'fflate';
@@ -57,6 +57,7 @@ for (const [key, stem] of [['relaxed', 'trial'], ['tense', 'press']]) {
   if (!name) throw new Error(`Missing music ${stem}`);
   await copy(name); manifest[key] = name;
 }
-await writeFile(path.join(output, 'manifest.json'), JSON.stringify(manifest, null, 2));
+await writeFile(path.join(output, 'catalog.json'), JSON.stringify(manifest, null, 2));
+await rm(path.join(output, 'manifest.json'), { force: true });
 await writeFile(path.join(output, 'PROVENANCE.json'), JSON.stringify({ url, sha256: digest, engineCommit: 'ebf4a2346028df8a130b45da71eb8fa72d3a8a39' }, null, 2));
 console.log(`Prepared ${manifest.characters.length} characters with original animation and audio. See THIRD_PARTY_NOTICES.md before redistribution.`);
