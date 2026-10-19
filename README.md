@@ -1,5 +1,7 @@
 # AceAttorTWExtension
 
+<img src="extension/branding/logo-256.png" width="160" height="160" alt="AATW logo">
+
 A Manifest V3 Chrome extension that turns selected, loaded X/Twitter messages into Ace Attorney courtroom videos **on your device**. It uses the original objection_engine artwork, animated sprites and audio with a TypeScript browser adaptation of its scene composition. No Python, local server, paid API, subscription or AI service is needed at runtime.
 
 The original bot source remains intact. Its previous instructions are in [README.legacy-bot.md](README.legacy-bot.md). The dependency investigation, reused engine behavior and fidelity differences are in [engine/README.md](engine/README.md).

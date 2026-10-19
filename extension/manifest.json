@@ -6,10 +6,18 @@
   "description": "Turn visible X conversations into locally rendered Ace Attorney courtroom videos.",
   "permissions": ["storage"],
   "background": { "service_worker": "background.js" },
-  "action": { "default_popup": "popup.html", "default_title": "AceAttorTWExtension" },
+  "icons": { "16": "branding/icon-16.png", "32": "branding/icon-32.png", "48": "branding/icon-48.png", "128": "branding/icon-128.png" },
+  "action": {
+    "default_popup": "popup.html", "default_title": "AceAttorTWExtension",
+    "default_icon": { "16": "branding/icon-16.png", "32": "branding/icon-32.png", "48": "branding/icon-48.png", "128": "branding/icon-128.png" }
+  },
   "content_scripts": [{
     "matches": ["https://x.com/*", "https://twitter.com/*"],
     "js": ["content.js"], "run_at": "document_idle"
+  }],
+  "web_accessible_resources": [{
+    "resources": ["branding/icon-32.png"],
+    "matches": ["https://x.com/*", "https://twitter.com/*"]
   }],
   "content_security_policy": { "extension_pages": "script-src 'self'; object-src 'none'" }
 }

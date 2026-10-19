@@ -17,9 +17,13 @@ function scan() {
     const host = document.createElement('ace-attortw-action');
     const shadow = host.attachShadow({ mode: 'open' });
     const style = document.createElement('style');
-    style.textContent = ':host{display:block;margin:10px 0 4px}button{font:600 13px system-ui;color:#1d9bf0;background:transparent;border:1px solid #536471;border-radius:999px;padding:8px 14px;cursor:pointer}button:hover{background:#1d9bf022}button:focus-visible{outline:2px solid #1d9bf0;outline-offset:3px}p{font:13px system-ui;color:inherit}';
+    style.textContent = ':host{display:block;margin:10px 0 4px}button{display:inline-flex;align-items:center;gap:8px;font:600 13px system-ui;color:#1d9bf0;background:transparent;border:1px solid #536471;border-radius:999px;padding:8px 14px;cursor:pointer}button img{width:24px;height:24px;flex-shrink:0;border-radius:4px}button:hover{background:#1d9bf022}button:focus-visible{outline:2px solid #1d9bf0;outline-offset:3px}p{font:13px system-ui;color:inherit}';
     const button = document.createElement('button');
     button.type = 'button'; button.textContent = 'Create Ace Attorney Courtroom';
+    const icon = document.createElement('img');
+    icon.src = chrome.runtime.getURL('branding/icon-32.png');
+    icon.alt = ''; icon.width = 24; icon.height = 24;
+    button.prepend(icon);
     const status = document.createElement('p'); status.setAttribute('role', 'status');
     button.addEventListener('click', async event => {
       event.preventDefault(); event.stopPropagation();

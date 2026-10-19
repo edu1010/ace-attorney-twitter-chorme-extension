@@ -8,6 +8,7 @@ await build({ entryPoints: { content: 'extension/src/content/index.ts', backgrou
   bundle: true, outdir: 'dist', target: 'chrome116', format: 'iife', sourcemap: true });
 for (const name of ['manifest.json', 'studio.html', 'studio.css', 'popup.html']) await copyFile(`extension/${name}`, `dist/${name}`);
 await cp('extension/assets', 'dist/assets', { recursive: true });
+await cp('extension/branding', 'dist/branding', { recursive: true });
 await copyFile('THIRD_PARTY_NOTICES.md', 'dist/THIRD_PARTY_NOTICES.md');
 await cp('engine/licenses', 'dist/licenses', { recursive: true });
 await copyFile('LICENSE', 'dist/LICENSE');
