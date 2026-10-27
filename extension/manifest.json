@@ -1,9 +1,9 @@
 {
   "manifest_version": 3,
   "name": "AceAttorTWExtension",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "minimum_chrome_version": "116",
-  "description": "Turn visible X conversations into locally rendered Ace Attorney courtroom videos.",
+  "description": "Turn X / Twitter threads into animated Ace Attorney courtroom videos with Objection! effects. Free, no AI, rendered on your device.",
   "permissions": ["storage"],
   "background": { "service_worker": "background.js" },
   "icons": { "16": "branding/icon-16.png", "32": "branding/icon-32.png", "48": "branding/icon-48.png", "128": "branding/icon-128.png" },
